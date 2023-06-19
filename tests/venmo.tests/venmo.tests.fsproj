@@ -1,0 +1,27 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net461</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="Program.fs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\libnhk\src\libnhk.wpf\libnhk.wpf.fsproj" />
+    <ProjectReference Include="..\..\..\libnhk\src\libnhk\libnhk.fsproj" />
+    <ProjectReference Include="..\..\src\libvenmo.cellyverifier\libvenmo.cellyverifier.fsproj" />
+    <ProjectReference Include="..\..\src\libvenmo.creator\libvenmo.creator.fsproj" />
+    <ProjectReference Include="..\..\src\libvenmo\libvenmo.fsproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Update="System.ValueTuple" Version="4.5.0" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,29 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <Import Project="fsc.props" />
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net472</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="assemblyinfo.fs" />
+    <Compile Include="creatorui.fs" />
+    <Compile Include="program.fs" />
+    <Resource Include="mainwindow.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FsXaml.Wpf" Version="3.1.6" />
+    <PackageReference Include="System.Reactive"/>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\libnhk\src\libnhk.wpf\libnhk.wpf.fsproj" />
+    <ProjectReference Include="..\libvenmo.creator\libvenmo.creator.fsproj" />
+    <ProjectReference Include="..\libvenmo\libvenmo.fsproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="UIAutomationTypes" />
+  </ItemGroup>
+</Project>

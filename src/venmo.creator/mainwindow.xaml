@@ -1,0 +1,44 @@
+<Window x:Class="Venmo.Creator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title ="venmo creator" Height="480" Width="640" Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}">
+    <Grid>
+        <DockPanel LastChildFill="True">
+            <StatusBar x:Name="StsStats"  DockPanel.Dock="Bottom" VerticalAlignment="Top" FontSize="10">
+				<Label x:Name="LblAttempts" Content="Attempts: [0]" />
+                <Label x:Name="LblCreated" Content="Created: [0]" />
+				
+            </StatusBar>
+            <TabControl DockPanel.Dock="Top" x:Name="TbMain" Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}">
+                <TabItem Header="Monitor" Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}">
+                    <Grid Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}">
+                        <DataGrid x:Name="WorkerMonitor" Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}" AutoGenerateColumns="False" RowHeaderWidth="28" IsReadOnly="True">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="Account" Width="100" />
+                                <DataGridTextColumn Header="Status" Width="*">
+                                    <DataGridTextColumn.ElementStyle>
+                                        <Style>
+                                            <Setter Property="TextBlock.TextWrapping" Value="Wrap" />
+                                            <Setter Property="TextBlock.TextAlignment" Value="Left" />
+                                        </Style>
+                                    </DataGridTextColumn.ElementStyle>
+                                </DataGridTextColumn>
+                            </DataGrid.Columns>
+                            <DataGrid.ContextMenu>
+                                <ContextMenu>
+                                    <MenuItem x:Name="CmdLaunch"  Header="Launch" />
+                                </ContextMenu>
+                            </DataGrid.ContextMenu>
+                        </DataGrid>
+                    </Grid>
+                </TabItem>
+                <TabItem x:Name="TbItemSettings" Header="Settings" Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}">
+                    <Grid x:Name="GrdSettingsContent" Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}" />
+                </TabItem>
+            </TabControl>
+        </DockPanel>
+    </Grid>
+</Window>
